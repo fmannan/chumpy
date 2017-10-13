@@ -11,7 +11,10 @@ from os.path import join, split
 from StringIO import StringIO
 import numpy
 import chumpy
-import cPickle as pickle
+try:
+    import cPickle as pickle
+except:
+    import pickle
 
 src = ''
 num_passed = 0
@@ -108,7 +111,7 @@ def append(a, b, c):
     b_color = lookup[b] if b in lookup else 'white'
     c_color = lookup[c] if c in lookup else 'white'
 
-    print '%s: %s, %s' % (a,b,c)
+    print('%s: %s, %s' % (a,b,c))
     make_row(a, b, c, b_color, c_color)
 
 def m(s):
@@ -524,11 +527,11 @@ def main():
     src = '<html><body><table border=1>' + src + '</table></body></html>'    
     open(join(split(__file__)[0], 'api_compatibility.html'), 'w').write(src)
     
-    print 'passed %d, not passed %d' % (num_passed, num_not_passed)
+    print('passed %d, not passed %d' % (num_passed, num_not_passed))
     
 
 
 if __name__ == '__main__':
     global which_passed
     main()
-    print ' '.join(which_passed)
+    print(' '.join(which_passed))

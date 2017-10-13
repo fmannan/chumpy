@@ -258,8 +258,8 @@ class TestLinalg(unittest.TestCase):
 
         #print diff_emp
         #print diff_pred
-        print diff_emp / diff_pred
-        print diff_emp - diff_pred
+        print(diff_emp / diff_pred)
+        print(diff_emp - diff_pred)
 
         parm.x = backed_up        
 

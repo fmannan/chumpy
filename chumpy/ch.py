@@ -662,7 +662,7 @@ class Ch(object):
 
             if hasattr(p, 'dterms') and p is not wrt and p.is_dr_wrt(wrt):
                 if not isinstance(p, Ch):
-                    print 'BROKEN!'
+                    print('BROKEN!')
                     raise Exception('Broken Should be Ch object')
 
                 indirect_dr = p.lmult_wrt(self._superdot(lhs, self._compute_dr_wrt_sliced(p)), wrt)
@@ -1339,16 +1339,16 @@ def main():
     x30 = Ch(30)
     
     tmp = ChLambda(lambda x, y, z: Ch(1) + Ch(2) * Ch(3) + 4)
-    print tmp.dr_wrt(tmp.x)
+    print(tmp.dr_wrt(tmp.x))
     import pdb; pdb.set_trace()
     #a(b(c(d(e(f),g),h)))
     
     blah = tst(x10, x20, x30)
     
-    print blah.r
+    print(blah.r)
 
 
-    print foo
+    print(foo)
     
     import pdb; pdb.set_trace()
     

@@ -96,8 +96,8 @@ class RosenCh(Ch):
             if visualize:
                 import matplotlib.pyplot as plt
                 residuals = np.sum(self.r**2)
-                print '------> RESIDUALS %.2e' % (residuals,)
-                print '------> CURRENT GUESS %s' % (str(self.x.r),)
+                print('------> RESIDUALS %.2e' % (residuals,))
+                print('------> CURRENT GUESS %s' % (str(self.x.r),))
                 plt.figure(123)
                 
                 if not hasattr(self, 'vs'):

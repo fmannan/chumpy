@@ -301,7 +301,7 @@ class TestCh(unittest.TestCase):
         # attribute, which is a nonserializable WeakKeyDictionary. 
         # So we pickle/unpickle, change a child and verify the value
         # at root, and verify that both children have parentage.
-        import cPickle as pickle
+        import six.pickle as pickle
         tmp = ch.Ch(10) + ch.Ch(20)
         tmp = pickle.loads(pickle.dumps(tmp))
         tmp.b.x = 30
@@ -594,9 +594,9 @@ class TestCh(unittest.TestCase):
                 theano_sse = (TF**2.).sum()
                 theano_grad = theano.gradient.grad(theano_sse, Ts[which])
                 theano_fn = function(Ts, theano_grad)
-                print theano_fn(*vals)
+                print(theano_fn(*vals))
                 C_result_grad = ch.SumOfSquares(C_result).dr_wrt(Cs[which])
-                print C_result_grad
+                print(C_result_grad)
                 
                 # if True:
                 #     aaa = np.linalg.solve(C_result_grad.T.dot(C_result_grad), C_result_grad.dot(np.zeros(C_result_grad.shape[1])))

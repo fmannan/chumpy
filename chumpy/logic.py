@@ -35,5 +35,5 @@ __all__ += unaries
 
 if __name__ == '__main__':
     import ch
-    print all(np.array([1,2,3]))
-    print isinf(np.array([0,2,3]))
+    print(all(np.array([1,2,3])))
+    print(isinf(np.array([0,2,3])))

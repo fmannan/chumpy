@@ -144,6 +144,6 @@ class DrWrtProfiler(object):
         self.history.append(rec)
 
     def harvest(self):
-        print 'collecting and dump to file %s' % self.path
+        print('collecting and dump to file %s' % self.path)
         with open(self.path, 'w') as f:
             json.dump(self.history, f, indent=4)
